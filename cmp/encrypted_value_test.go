@@ -7,8 +7,9 @@ import (
 	"encoding/base64"
 	"fmt"
 	"log"
-	"ra/libs/certutil"
 	"testing"
+
+	"github.com/zjj/golibkit/certutil"
 )
 
 func TestEncryptedValue(x *testing.T) {

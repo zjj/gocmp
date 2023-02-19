@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"math/big"
-	"ra/consts"
 	"testing"
 )
 
@@ -31,7 +30,6 @@ func TestParsePKIBodyCP(x *testing.T) {
 	}
 
 	{
-		consts.InitConstsForRaBusiness()
 		cp, err := ParsePKIBodyCP(raw1)
 		if err != nil {
 			log.Fatal(err)
