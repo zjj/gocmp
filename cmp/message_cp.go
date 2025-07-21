@@ -61,7 +61,7 @@ func ParsePKIBodyCP(raw []byte) (*PKIMessageCP, error) {
 	ret.Body = body
 	ret.Protection = cp.Protection
 	for _, cert := range cp.ExtraCerts {
-		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX590Certificate()
+		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX509Certificate()
 		if err != nil {
 			return nil, err
 		}

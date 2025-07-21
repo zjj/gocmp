@@ -62,7 +62,7 @@ func ParsePKIBodyKUP(raw []byte) (*PKIMessageKUP, error) {
 	ret.Body = body
 	ret.Protection = kup.Protection
 	for _, cert := range kup.ExtraCerts {
-		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX590Certificate()
+		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX509Certificate()
 		if err != nil {
 			return nil, err
 		}

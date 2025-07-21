@@ -89,7 +89,7 @@ func ParsePKIBodyKRP(raw []byte) (*PKIMessageKRP, error) {
 	ret.Body = krp.Body.newKeyRecRepContent()
 	ret.Protection = krp.Protection
 	for _, cert := range krp.ExtraCerts {
-		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX590Certificate()
+		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX509Certificate()
 		if err != nil {
 			return nil, err
 		}

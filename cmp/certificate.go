@@ -78,7 +78,7 @@ func (r certResponse) newCertResponse() *CertResponse {
 
 type certifiedKeyPair struct {
 	Raw             asn1.RawContent
-	CertOrEncCert   certOrEncCert      `asn1:"optional,tag:0"`
+	CertOrEncCert   certOrEncCert
 	PrivateKey      EncryptedValue     `asn1:"explicit,optional,tag:0"`
 	PublicationInfo PKIPublicationInfo `asn1:"explicit,optional,tag:1"`
 }

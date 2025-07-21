@@ -21,7 +21,7 @@ func NewPKIBodyKRRasn1(tmplLst []CertTemplate) (interface{}, error) {
 		KRR: krrMsgLst,
 	}
 
-	body, err := asn1.MarshalWithParams(wrap, "tag:9,explict,optional")
+	body, err := asn1.MarshalWithParams(wrap, "tag:9,explicit,optional")
 	if err != nil {
 		return nil, err
 	}

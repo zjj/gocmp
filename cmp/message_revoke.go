@@ -93,7 +93,6 @@ type DirectoryNameSET struct {
 	DirectoryNames []DirectoryName `asn1:"set"`
 }
 
-//
 type DirectoryName struct {
 	Id    asn1.ObjectIdentifier
 	Value string
@@ -119,7 +118,7 @@ func NewPKIBodyRRasn1(tmplLst []CertTemplate, op uint8) (interface{}, error) {
 		RR: rrMsgList,
 	}
 
-	body, err := asn1.MarshalWithParams(wrap, "tag:11,explict")
+	body, err := asn1.MarshalWithParams(wrap, "tag:11,explicit")
 	if err != nil {
 		return nil, err
 	}
@@ -152,7 +151,7 @@ func ParsePKIBodyRP(raw []byte) (*PKIMessageRP, error) {
 	ret.Protection = rp.Protection
 
 	for _, cert := range rp.ExtraCerts {
-		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX590Certificate()
+		x509Cert, err := Certificate{Raw: cert.Raw[:]}.ToX509Certificate()
 		if err != nil {
 			return nil, err
 		}
